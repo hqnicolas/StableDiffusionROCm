@@ -5,26 +5,23 @@ AUTOMATIC1111 implemented using Gradio library.
 - Radeon RX-6000
 Select [V1.9.3](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.9.3-RX6XT) or [1.7.0](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.7.0-RX6XT) 
 - and be free to use on Windows Docker.
+# [Automatic1111 web interface](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 - [Detailed feature showcase with images](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
 - Make sure that your Debian Linux system was fresh (Also Ubuntu)
-- Prepare AMD to install and restart ROCm Driver 
+- Prepare AMD ROCm Driver install
 ```
 sudo usermod -a -G render,video $LOGNAME
-wget https://raw.githubusercontent.com/hqnicolas/StableDiffusionROCm/v1.9.3-RX7XT/AMD-ROCm-Drivers/prepare.sh
+wget https://raw.githubusercontent.com/hqnicolas/StableDiffusionROCm/v1.7.0-RX6XT/AMD-ROCm-Drivers/prepare.sh
 sudo chmod 777 prepare.sh
 sudo ./prepare.sh
 ```
-- For RDNA and RDNA 2 cards RX5000 RX6000:
+- For RDNA 2 cards RX6000:
 ```
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
 ```
-- For RDNA 3 cards RX7000:
-```
-export HSA_OVERRIDE_GFX_VERSION=11.0.0
-```
 - install Docker
 ```
-wget https://raw.githubusercontent.com/hqnicolas/StableDiffusionROCm/v1.9.3-RX7XT/docker.sh
+wget https://raw.githubusercontent.com/hqnicolas/StableDiffusionROCm/v1.7.0-RX6XT/docker.sh
 sudo chmod 777 docker.sh
 sudo ./docker.sh
 ```
@@ -36,7 +33,7 @@ sudo apt-get install docker-compose -y
 ```
 - Install Stable Diffusion ROCm
 ```
-git clone --branch v1.9.3-RX7XT https://github.com/hqnicolas/StableDiffusionROCm.git
+git clone --branch v1.7.0-RX7XT https://github.com/hqnicolas/StableDiffusionROCm.git
 cd StableDiffusionROCm
 sudo docker-compose build stablediff-rocm
 sudo docker compose up -d stablediff-rocm
@@ -64,4 +61,3 @@ To check python version.
 ```
 sudo docker exec -it stablediff-rocm-runner /bin/bash -c "python -V"
 ```
-
