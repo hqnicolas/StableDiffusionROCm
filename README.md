@@ -10,7 +10,7 @@ Select [V1.9.3](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.9.3-RX6
 - Prepare AMD to install and restart ROCm Driver 
 ```
 sudo usermod -a -G render,video $LOGNAME
-wget https://raw.githubusercontent.com/hqnicolas/StableDiffusionROCm/v1.9.3-RX7XT/AMD-ROCm-Drivers/prepare.sh
+wget https://raw.githubusercontent.com/hqnicolas/StableDiffusionROCm/v1.9.3-RX6XT/AMD-ROCm-Drivers/prepare.sh
 sudo chmod 777 prepare.sh
 sudo ./prepare.sh
 ```
@@ -24,7 +24,7 @@ export HSA_OVERRIDE_GFX_VERSION=11.0.0
 ```
 - install Docker
 ```
-wget https://raw.githubusercontent.com/hqnicolas/StableDiffusionROCm/v1.9.3-RX7XT/docker.sh
+wget https://raw.githubusercontent.com/hqnicolas/StableDiffusionROCm/v1.9.3-RX6XT/docker.sh
 sudo chmod 777 docker.sh
 sudo ./docker.sh
 ```
@@ -36,7 +36,7 @@ sudo apt-get install docker-compose -y
 ```
 - Install Stable Diffusion ROCm
 ```
-git clone --branch v1.9.3-RX7XT https://github.com/hqnicolas/StableDiffusionROCm.git
+git clone --branch v1.9.3-RX6XT https://github.com/hqnicolas/StableDiffusionROCm.git
 cd StableDiffusionROCm
 sudo docker-compose build stablediff-rocm
 sudo docker compose up -d stablediff-rocm

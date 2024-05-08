@@ -40,7 +40,7 @@ RUN git clone https://github.com/agrocylo/bitsandbytes-rocm
 RUN cd bitsandbytes-rocm \
     make hip
 RUN cd bitsandbytes-rocm \
-RUN CUDA_VERSION=gfx1100 /usr/bin/python3 setup.py install \
+RUN CUDA_VERSION=gfx1030 /usr/bin/python3 setup.py install \
     python3 -m bitsandbytes
 WORKDIR /sdtemp
 RUN git clone --branch v1.9.3 https://github.com/AUTOMATIC1111/stable-diffusion-webui /sdtemp
