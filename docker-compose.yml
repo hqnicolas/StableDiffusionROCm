@@ -1,0 +1,92 @@
+services:
+  stablediff-cpu:
+    build: 
+      context: .
+      dockerfile: Dockerfile.cpu
+    container_name: stablediff-cpu-runner
+    environment:
+      TZ: "Asia/Jakarta"
+      COMMANDLINE_ARGS: "--listen --no-half --skip-torch-cuda-test"
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      ". /stablediff.env; echo launch.py $$COMMANDLINE_ARGS;
+      if [ ! -d /stablediff-web/.git ]; then
+        cp -a /sdtemp/. /stablediff-web/
+      fi;
+      if [ ! -f /stablediff-web/models/Stable-diffusion/*.ckpt ]; then
+        echo 'Please copy stable diffusion model to stablediff-models directory'
+        echo 'You may need sudo to perform this action'
+        exit 1
+      fi;
+      /usr/bin/python3 launch.py"
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./stablediff.env:/stablediff.env
+      - ./stablediff-web:/stablediff-web
+      - ./stablediff-models:/stablediff-web/models/Stable-diffusion
+  stablediff-rocm:
+    build: 
+      context: .
+      dockerfile: Dockerfile.rocm
+    container_name: stablediff-rocm-runner
+    environment:
+      TZ: "Asia/Jakarta"
+      ROC_ENABLE_PRE_VEGA: 1
+      COMMANDLINE_ARGS: "--listen --precision full"
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      "rocm-smi; . /stablediff.env; echo launch.py $$COMMANDLINE_ARGS;
+      if [ ! -d /stablediff-web/.git ]; then
+        cp -a /sdtemp/. /stablediff-web/
+      fi;
+      if [ ! -f /stablediff-web/models/Stable-diffusion/*.ckpt ]; then
+        echo 'Please copy stable diffusion model to stablediff-models directory'
+        echo 'You may need sudo to perform this action'
+        exit 1
+      fi;
+      /usr/bin/python3 launch.py"
+    ports:
+      - "7860:7860"
+    devices:
+      - "/dev/kfd:/dev/kfd"
+      - "/dev/dri:/dev/dri"
+    group_add:
+      - video
+    ipc: host
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - ./stablediff.env:/stablediff.env
+      - ./stablediff-web:/stablediff-web
+      - ./stablediff-models:/stablediff-web/models/Stable-diffusion
+  stablediff-cuda:
+    build: 
+      context: .
+      dockerfile: Dockerfile.cuda
+    container_name: stablediff-runner-cuda
+    runtime: nvidia
+    environment:
+      TZ: "Asia/Jakarta"
+      NVIDIA_VISIBLE_DEVICES: all
+      COMMANDLINE_ARGS: "--listen"
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      "nvidia-smi; . /stablediff.env; echo launch.py $$COMMANDLINE_ARGS;
+      if [ ! -d /stablediff-web/.git ]; then
+        cp -a /sdtemp/. /stablediff-web/
+      fi;
+      if [ ! -f /stablediff-web/models/Stable-diffusion/*.ckpt ]; then
+        echo 'Please copy stable diffusion model to stablediff-models directory'
+        echo 'You may need sudo to perform this action'
+        exit 1
+      fi;
+      /usr/bin/python3 launch.py"
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./stablediff.env:/stablediff.env
+      - ./stablediff-web:/stablediff-web
+      - ./stablediff-models:/stablediff-web/models/Stable-diffusion
