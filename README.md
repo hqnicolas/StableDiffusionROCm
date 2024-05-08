@@ -49,13 +49,17 @@ sudo docker start -a stablediff-rocm-runner
 ```
 - Stop Stable Diffusion ROCm
 ```
-sudo docker stop stablediff-rocm
+sudo docker stop stablediff-rocm-runner
 ```
 To see a prompt from your GPU usage.
 ```
 watch /opt/rocm-6.0.2/bin/rocm-smi
 sudo docker ps
 sudo docker exec -it stablediff-rocm-runner /bin/bash -c "watch rocm-smi"
+```
+To check python version.
+```
+sudo docker exec -it stablediff-rocm-runner /bin/bash -c "python -V"
 ```
 To check python version.
 ```
