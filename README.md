@@ -49,7 +49,7 @@ sudo docker start -a stablediff-rocm-runner
 ```
 - Stop Stable Diffusion ROCm
 ```
-sudo docker stop stablediff-rocm
+sudo docker stop stablediff-rocm-runner
 ```
 To see a prompt from your GPU usage.
 ```
