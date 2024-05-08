@@ -14,13 +14,9 @@ wget https://raw.githubusercontent.com/hqnicolas/StableDiffusionROCm/v1.9.3-RX6X
 sudo chmod 777 prepare.sh
 sudo ./prepare.sh
 ```
-- For RDNA and RDNA 2 cards RX5000 RX6000:
+- For RDNA 2 cards RX6000:
 ```
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
-```
-- For RDNA 3 cards RX7000:
-```
-export HSA_OVERRIDE_GFX_VERSION=11.0.0
 ```
 - install Docker
 ```
