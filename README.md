@@ -32,7 +32,7 @@ sudo apt-get install docker-compose -y
 ```
 - Install Stable Diffusion ROCm
 ```
-git clone --branch v1.9.3-RX7XT https://github.com/hqnicolas/stable-diffusion-webui.git
+git clone --branch v1.9.3-RX7XT https://github.com/hqnicolas/StableDiffusionROCm.git
 cd StableDiffusionROCm
 sudo docker-compose build stablediff-rocm
 sudo docker compose up -d stablediff-rocm
