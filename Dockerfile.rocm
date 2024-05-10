@@ -13,14 +13,12 @@ RUN apt-get update &&\
 RUN python -m pip install --upgrade pip wheel
 
 WORKDIR /bitsandbytes
-RUN apt install hipblaslt -y
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install einops==0.7.0 lion_pytorch accelerate==0.25.0
-RUN python3 -m pip install git+https://github.com/ROCm/transformers.git
-RUN git clone --recurse https://github.com/ROCm/bitsandbytes.git /bitsandbytes
-RUN git checkout rocm6.2_internal_testing
-RUN make hip
-RUN CUDA_VERSION=gfx1100 python3 setup.py install
+RUN git clone https://github.com/hqnicolas/bitsandbytes-rocm
+RUN cd bitsandbytes-rocm \
+    make hip
+RUN cd bitsandbytes-rocm \
+RUN CUDA_VERSION=gfx1100 /usr/bin/python3 setup.py install \
+    python3 -m bitsandbytes
 
 WORKDIR /sdtemp
 RUN git clone --branch v1.7.0 https://github.com/AUTOMATIC1111/stable-diffusion-webui /sdtemp
