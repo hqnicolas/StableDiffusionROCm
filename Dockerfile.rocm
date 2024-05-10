@@ -45,7 +45,7 @@ RUN CUDA_VERSION=gfx1100 /usr/bin/python3 setup.py install \
     python3 -m bitsandbytes
 
 WORKDIR /sdtemp
-RUN git clone --branch v1.9.3 https://github.com/AUTOMATIC1111/stable-diffusion-webui /sdtemp
+RUN git clone --branch v1.9.3 https://github.com/hqnicolas/stable-diffusion-webui /sdtemp
 
 #torch and torchvision version number refer to
 #https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/launch.py
