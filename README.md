@@ -5,10 +5,9 @@ AUTOMATIC1111 implemented using Gradio library.
 - Radeon RX-6000
 Select [V1.9.3](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.9.3-RX6XT) or [1.7.0](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.7.0-RX6XT) 
 - and be free to use on Windows Docker.
-# [Automatic1111 web interface](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 - [Detailed feature showcase with images](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
 - Make sure that your Debian Linux system was fresh (Also Ubuntu)
-- Prepare AMD ROCm Driver install
+- Prepare AMD to install and restart ROCm Driver 
 ```
 sudo usermod -a -G render,video $LOGNAME
 wget https://raw.githubusercontent.com/hqnicolas/StableDiffusionROCm/v1.7.0-RX7XT/AMD-ROCm-Drivers/prepare.sh
