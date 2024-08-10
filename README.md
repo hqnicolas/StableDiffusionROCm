@@ -3,7 +3,7 @@ AUTOMATIC1111 implemented using Gradio library.
 - Radeon RX-7000
  Select [V1.10.1](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.10.1-RX7XT) or [V1.9.3](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.9.3-RX7XT) or [1.7.0](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.7.0-RX7XT)
 - Radeon RX-6000
-Select [V1.9.3](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.9.3-RX6XT) or [1.7.0](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.7.0-RX6XT) 
+Select [V1.10.1](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.10.1-RX6XT) or [V1.9.3](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.9.3-RX6XT) or [1.7.0](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.7.0-RX6XT) 
 - and be free to use on Windows Docker.
 - [Detailed feature showcase with images](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)
 - Make sure that your Debian Linux system was fresh (Also Ubuntu)
