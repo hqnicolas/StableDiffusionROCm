@@ -1,7 +1,7 @@
 # 💬 [Stable Diffusion](https://github.com/AUTOMATIC1111/stable-diffusion-webui) Radeon ROCm 📷
 AUTOMATIC1111 implemented using Gradio library.
 - Radeon RX-7000
- Select [V1.10.1](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.10.1-RX7XT) [V1.9.3](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.9.3-RX7XT) or [1.7.0](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.7.0-RX7XT)
+ Select [V1.10.1](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.10.1-RX7XT) or [V1.9.3](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.9.3-RX7XT) or [1.7.0](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.7.0-RX7XT)
 - Radeon RX-6000
 Select [V1.9.3](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.9.3-RX6XT) or [1.7.0](https://github.com/hqnicolas/StableDiffusionROCm/tree/v1.7.0-RX6XT) 
 - and be free to use on Windows Docker.
