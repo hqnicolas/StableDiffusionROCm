@@ -38,7 +38,7 @@ sudo docker-compose build stablediff-rocm
 sudo docker compose up -d stablediff-rocm
 ```
 - CTRL+C to stop UP Compose
-- Copy [Models](https://huggingface.co/runwayml/stable-diffusion-v1-5/blob/main/v1-5-pruned.ckpt) to StableDiffusionROCm/stablediff-models
+- Copy [Models](https://huggingface.co/models) to StableDiffusionROCm/stablediff-models
 ```
 cp v1-5-pruned.ckpt StableDiffusionROCm/stablediff-models
 ```
